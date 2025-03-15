@@ -1,91 +1,57 @@
-﻿<!DOCTYPE html>
-<html>
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEW PDF</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora Científica Moderna</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+  <div class="calculator">
+    <div class="display">
+      <div class="operation" id="operation"></div>
+      <div class="result" id="result"></div>
+    </div>
+    <div class="buttons">
+      <!-- Botones de funciones/operadores -->
+      <button class="btn-function" onclick="clearDisplay()">C</button>
+      <button class="btn-function" onclick="deleteChar()">⌫</button>
+      <button class="btn-function" onclick="appendToDisplay('(')"> ( </button>
+      <button class="btn-function" onclick="appendToDisplay(')')"> ) </button>
 
-<body class="stackedit">
-  <div class="stackedit__html"><h1 id="red-neuronal">Red Neuronal</h1>
-<h2 id="definición">Definición</h2>
-<ul>
-<li>Conjunto de nodos interconectados inspirados en el cerebro humano.</li>
-<li>Procesa información en múltiples capas.</li>
-</ul>
-<h2 id="tipos-de-redes-neuronales">Tipos de Redes Neuronales</h2>
-<ul>
-<li>Perceptrón
-<ul>
-<li>Modelo más simple de red neuronal.</li>
-<li>Solo tiene una capa de salida.</li>
-</ul>
-</li>
-<li>Feedforward
-<ul>
-<li>Información viaja en una sola dirección (de entrada a salida).</li>
-</ul>
-</li>
-<li>Recurrente
-<ul>
-<li>Información puede retroalimentarse a través de ciclos.</li>
-</ul>
-</li>
-</ul>
-<h2 id="componentes-principales">Componentes Principales</h2>
-<ul>
-<li>Neuronas
-<ul>
-<li>Elementos básicos de procesamiento.</li>
-<li>Reciben, procesan y transmiten señales.</li>
-</ul>
-</li>
-<li>Capas
-<ul>
-<li>Capa de entrada: Recibe los datos.</li>
-<li>Capas ocultas: Procesan los datos a través de funciones de activación.</li>
-<li>Capa de salida: Produce la salida final.</li>
-</ul>
-</li>
-<li>Pesos
-<ul>
-<li>Determinan la importancia de cada señal de entrada.</li>
-</ul>
-</li>
-</ul>
-<h2 id="aprendizaje">Aprendizaje</h2>
-<ul>
-<li>Supervisado
-<ul>
-<li>Utiliza datos etiquetados para entrenar la red.</li>
-</ul>
-</li>
-<li>No Supervisado
-<ul>
-<li>La red encuentra patrones sin necesidad de etiquetas.</li>
-</ul>
-</li>
-<li>Reforzado
-<ul>
-<li>Aprende a través de recompensas y castigos.</li>
-</ul>
-</li>
-</ul>
-<h2 id="aplicaciones">Aplicaciones</h2>
-<ul>
-<li>Reconocimiento de imágenes</li>
-<li>Procesamiento del lenguaje natural</li>
-<li>Juegos y robótica</li>
-</ul>
-<pre class=" language-mermaid"><code class="prism  language-mermaid">graph TD
-    A[Combustión del Metano]
-    A --&gt;|Reactivos| B[CH₄ + 2O₂]
-    A --&gt;|Productos| C[CO₂ + 2H₂O]
-    A --&gt;|Energía| D[Exotérmica (Cede energía)]
-</code></pre>
-</div>
+      <!-- Botones numéricos y operadores aritméticos -->
+      <button class="btn-number" onclick="appendToDisplay('7')">7</button>
+      <button class="btn-number" onclick="appendToDisplay('8')">8</button>
+      <button class="btn-number" onclick="appendToDisplay('9')">9</button>
+      <button class="btn-function" onclick="appendToDisplay('/')">÷</button>
+
+      <button class="btn-number" onclick="appendToDisplay('4')">4</button>
+      <button class="btn-number" onclick="appendToDisplay('5')">5</button>
+      <button class="btn-number" onclick="appendToDisplay('6')">6</button>
+      <button class="btn-function" onclick="appendToDisplay('*')">×</button>
+
+      <button class="btn-number" onclick="appendToDisplay('1')">1</button>
+      <button class="btn-number" onclick="appendToDisplay('2')">2</button>
+      <button class="btn-number" onclick="appendToDisplay('3')">3</button>
+      <button class="btn-function" onclick="appendToDisplay('-')">-</button>
+
+      <button class="btn-number" onclick="appendToDisplay('0')">0</button>
+      <button class="btn-number" onclick="appendToDisplay('.')">.</button>
+      <button class="btn-function" onclick="calculate()">=</button>
+      <button class="btn-function" onclick="appendToDisplay('+')">+</button>
+
+      <!-- Botones de funciones trigonométricas y científicas -->
+      <button class="btn-function" onclick="appendToDisplay('Math.sin(')">sin</button>
+      <button class="btn-function" onclick="appendToDisplay('Math.cos(')">cos</button>
+      <button class="btn-function" onclick="appendToDisplay('Math.tan(')">tan</button>
+      <button class="btn-function" onclick="appendToDisplay('Math.log(')">ln</button>
+      <button class="btn-function" onclick="appendToDisplay('Math.sqrt(')">√</button>
+      <button class="btn-function" onclick="appendToDisplay('Math.pow(')">^</button>
+
+      <!-- Botón para alternar la visualización del resultado -->
+      <button class="btn-toggle" onclick="toggleResultRepresentation()">Frac/Dec</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
-
 </html>
